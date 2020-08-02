@@ -1,0 +1,32 @@
+﻿@model Twitt_prof.ViewModels.PostViewModel
+@{
+    ViewData["Title"] = "eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="card">
+        <div class="card-header bg-danger text-white">
+            <h2>Eliminar  - @Model.NombreUsuario</h2>
+        </div>
+        <div class="card-body">
+
+            <h2>Estas seguro que desas eliminar a este pokemon?</h2>
+            <form asp-action="EliminarConfirmed" method="post">
+
+                <input asp-for="Post" type="hidden" />
+
+                <div class="form-group text-center" style="margin-top: 15px">
+
+                    <input type="submit" value="Eliminar" class="btn btn-info" /> |
+                    <a asp-action="Index" class="btn btn-danger">Volver</a>
+
+                </div>
+
+
+            </form>
+
+
+
+
+        </div>
+    </div>

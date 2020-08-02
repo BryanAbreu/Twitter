@@ -1,0 +1,50 @@
+﻿@using Database.Models
+@using Twitt_prof.ViewModels;
+@using Microsoft.AspNetCore.Http
+@model List<Twitt_prof.ViewModels.UsuarioViewModel>
+
+
+    @{
+        ViewData["Title"] = "Amigos";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h1>Amigos que quizas conozcas</h1>
+
+
+
+    <div class="card-body">
+
+
+        <table class="table table-borderless">
+            <thead class="thead-dark">
+                <tr>
+
+                    <th scope="col">Usuarios</th>
+                   
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    if (@item.NombreUsuario != User.Identity.Name)
+                    {
+                        {
+                            <tr class="border border-warning">
+
+
+                                <td>@item.NombreUsuario</td>
+                               
+
+                            </tr>
+                        }
+
+                    }
+
+
+
+                }
+            </tbody>
+        </table>
+    </div>
